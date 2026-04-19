@@ -24,7 +24,7 @@
     gap: 10px;
 
     @include media-laptop-l {
-        width: 320px;
+        width: 390px;
     }
 
     span {
@@ -88,7 +88,7 @@
 
   .swiper-slide {
     p {
-      font-family: $font-serif;
+      font-family: $font-sans;
       font-size: 14px;
       font-weight: 500;
       line-height: 26px;

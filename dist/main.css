@@ -456,7 +456,7 @@ header {
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
 }
 header.open-menu {
   background-color: #fff0f0;
@@ -933,7 +933,6 @@ header.open-menu .toggle-menu .close-icon {
 .banner {
   height: 568px;
   position: relative;
-  overflow: hidden;
 }
 @media (min-width: 768px) {
   .banner {
@@ -945,6 +944,34 @@ header.open-menu .toggle-menu .close-icon {
     height: 840px;
   }
 }
+.banner::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  width: 70%;
+  max-width: 852px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(108, 92, 231, 0.55), rgba(108, 92, 231, 0) 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  transform: translateX(-50%);
+  z-index: 1;
+  border-radius: 852px;
+  background: #C139E1;
+  filter: blur(120px);
+}
+@media (min-width: 1280px) {
+  .banner::after {
+    bottom: -100px;
+    height: 214px;
+    filter: blur(262px);
+  }
+}
+.banner .columnar {
+  z-index: 2;
+}
 .banner .banner-img {
   left: 0;
   height: 100%;
@@ -952,20 +979,33 @@ header.open-menu .toggle-menu .close-icon {
   position: absolute;
   top: 0;
   width: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .banner .banner-img img {
-  height: 100%;
-  object-fit: contain;
-  left: 50%;
   position: absolute;
-  transform: translateX(-50%);
+  object-fit: cover;
+  width: 100%;
+  height: unset;
+}
+@media (min-width: 1280px) {
+  .banner .banner-img img {
+    transform: translateX(-50%);
+    left: 50%;
+    object-fit: contain;
+    height: 100%;
+  }
 }
 .banner .banner-wrap {
   align-items: center;
   display: flex;
   justify-content: space-between;
   padding: 25px 0;
+  position: relative;
   width: 100%;
+  z-index: 2;
 }
 @media (min-width: 768px) {
   .banner .banner-wrap {
@@ -1010,6 +1050,21 @@ header.open-menu .toggle-menu .close-icon {
   font-weight: 800;
   line-height: 24px;
   text-transform: uppercase;
+}
+.banner .banner-wrap .heading div .banner-mark {
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-transform: none;
+  margin-bottom: 10px;
+}
+@media (min-width: 1280px) {
+  .banner .banner-wrap .heading div .banner-mark {
+    font-size: 24px;
+    line-height: 30px;
+  }
 }
 .banner .banner-wrap .heading div h1,
 .banner .banner-wrap .heading div p {
@@ -1599,7 +1654,7 @@ header.open-menu .toggle-menu .close-icon {
 }
 @media (min-width: 1280px) {
   .text-block .headline {
-    width: 320px;
+    width: 390px;
   }
 }
 .text-block .headline span {
@@ -1662,7 +1717,7 @@ header.open-menu .toggle-menu .close-icon {
   }
 }
 .description-slider .swiper-slide p {
-  font-family: "Playfair Display", serif;
+  font-family: "Manrope", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 26px;

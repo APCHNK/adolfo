@@ -1,7 +1,6 @@
 .banner {
   height: 568px;
   position: relative;
-  overflow: hidden;
 
   @include media-tablet {
     height: 447px;
@@ -11,6 +10,33 @@
     height: 840px;
   }
 
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    width: 70%;
+    max-width: 852px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(108, 92, 231, 0.55), rgba(108, 92, 231, 0) 70%);
+    filter: blur(40px);
+    pointer-events: none;
+    transform: translateX(-50%);
+    z-index: 1;
+    border-radius: 852px;
+    background: #C139E1;
+    filter: blur(120px);
+
+    @include media-laptop-l {
+      bottom: -100px;
+      height: 214px;
+      filter: blur(262px);
+    }
+  }
+  .columnar{
+    z-index: 2;
+  }
   .banner-img {
     left: 0;
     height: 100%;
@@ -18,13 +44,22 @@
     position: absolute;
     top: 0;
     width: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     img {
-      height: 100%;
-      object-fit: contain;
-      left: 50%;
       position: absolute;
-      transform: translateX(-50%);
+      object-fit: cover;
+      width: 100%;
+      height: unset;
+      @include media-laptop-l {
+        transform: translateX(-50%);
+        left: 50%;
+        object-fit: contain;
+        height: 100%;
+      }
     }
   }
 
@@ -33,7 +68,9 @@
     display: flex;
     justify-content: space-between;
     padding: 25px 0;
+    position: relative;
     width: 100%;
+    z-index: 2;
 
     @include media-tablet {
       padding: 0;
@@ -74,6 +111,21 @@
           font-weight: 800;
           line-height: 24px;
           text-transform: uppercase;
+        }
+
+        .banner-mark {
+          color: $color-white;
+          font-family: $font-serif;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+          text-transform: none;
+          margin-bottom: 10px;
+
+          @include media-laptop-l {
+            font-size: 24px;
+            line-height: 30px;
+          }
         }
         h1,
         p {

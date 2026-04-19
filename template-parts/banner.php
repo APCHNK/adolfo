@@ -5,6 +5,7 @@ if (!$banner) return;
 $image = $banner['image'] ?? null;
 $title = $banner['title'] ?? '';
 $subtitle = $banner['subtitle'] ?? '';
+$mark_text = $banner['mark_text'] ?? '';
 $button = $banner['button'] ?? null;
 $use_modal = $banner['use_modal'] ?? true;
 
@@ -20,6 +21,9 @@ if (!$title) return;
     <div class="banner-wrap">
       <div class="heading">
         <div>
+          <?php if ($mark_text) : ?>
+            <span class="banner-mark wow-desktop fadeInUp" data-wow-delay="0.2s"><?php echo esc_html($mark_text); ?></span>
+          <?php endif; ?>
           <?php if ($title) : ?>
             <h1 class="wow-desktop fadeInUp" data-wow-delay="0.3s"><?php echo esc_html($title); ?></h1>
           <?php endif; ?>
