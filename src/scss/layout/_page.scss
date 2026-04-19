@@ -1,5 +1,6 @@
 .page {
-  background-color: $color-light;
+  background-color: $color-dark;
+  color: $color-white;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -13,6 +14,27 @@
   @include media-laptop-l {
     gap: 120px;
     padding-top: 150px;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  p, span, li {
+    color: $color-white;
+  }
+
+  h1 {
+    font-family: $font-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.1;
+
+    @include media-tablet {
+      font-size: 48px;
+    }
+
+    @include media-laptop-l {
+      font-size: 60px;
+      line-height: 60px;
+    }
   }
 
   .simple-column {
