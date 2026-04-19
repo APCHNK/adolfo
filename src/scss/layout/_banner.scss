@@ -65,7 +65,7 @@
       width: 40%;
       height: 100%;
       background: linear-gradient(270deg, rgba(0, 0, 0, 0.00) 0%, #000 100%);
-      @include media-laptop-l {
+      @media screen and (max-width: 767px) {
         display: none;
       }
     }
