@@ -27,7 +27,7 @@ $play_icon = get_template_directory_uri() . '/assets/icons/play-icon.svg';
 $pause_icon = get_template_directory_uri() . '/assets/icons/pause-icon.svg';
 $first_url = $tracks_json[0]['spotify_url'] ?? '';
 ?>
-<div class="player">
+<div class="player<?php echo count($tracks_json) > 1 ? ' has-tracklist' : ''; ?>">
   <?php if ($headline) : ?>
     <h2 class="wow fadeInUp"><?php echo esc_html($headline); ?></h2>
   <?php endif; ?>

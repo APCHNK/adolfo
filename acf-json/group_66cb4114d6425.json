@@ -25,28 +25,6 @@
             "prefix_name": 0
         },
         {
-            "key": "field_66cb41417a023",
-            "label": "Text Area",
-            "name": "text_area",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "show_in_graphql": 1,
-            "clone": [
-                "group_66cb3dfa9c1b3"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
-        },
-        {
             "key": "field_headline_slides",
             "label": "Slides",
             "name": "slides",
@@ -97,5 +75,5 @@
     "graphql_field_name": "contentBlock",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1724597346
+    "modified": 1776601103
 }

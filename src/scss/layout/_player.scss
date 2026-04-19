@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  position: relative;
 
   @include media-tablet {
     gap: 30px;
@@ -9,6 +10,48 @@
 
   @include media-laptop-l {
     gap: 30px;
+  }
+  h2{
+    z-index: 2;
+  }
+  &.has-tracklist {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      width: 70%;
+      max-width: 852px;
+      height: 120px;
+      border-radius: 852px;
+      background: #C139E1;
+      filter: blur(120px);
+      pointer-events: none;
+      transform: translateX(-50%);
+      z-index: 1;
+
+      @include media-laptop-l {
+        height: 214px;
+        filter: blur(262px);
+      }
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: -60px;
+
+      @include media-laptop-l {
+        bottom: -100px;
+      }
+    }
+  }
+
+  .player-wrap {
+    position: relative;
+    z-index: 2;
   }
 }
 

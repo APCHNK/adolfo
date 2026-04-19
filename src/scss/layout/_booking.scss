@@ -37,7 +37,9 @@
     }
   }
 }
-
+.columnar:has(.booking-hero) {
+  z-index: 2;
+}
 // Booking hero with video
 .booking-hero {
   display: flex;

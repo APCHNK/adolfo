@@ -39,14 +39,12 @@
       }
 
       img {
-        border-radius: 24px;
         flex-shrink: 0;
         height: 91px;
         object-fit: cover;
         width: 91px;
 
         @include media-tablet {
-          border-radius: 32px;
           height: 140px;
           width: 140px;
         }

@@ -4,15 +4,15 @@ $slides = get_sub_field('slides');
 
 if ((!$headline || (!$headline['title'] && !$headline['subtitle'])) && !$slides) return;
 
-$has_slider = $slides && is_array($slides) && count($slides) > 1;
+$has_slider = $slides && is_array($slides) && count($slides) >= 1;
 ?>
 <div class="text-block">
   <div class="headline load-fadeInUp">
     <?php if (!empty($headline['title'])) : ?>
-      <h2><?php echo esc_html($headline['title']); ?></h2>
+      <h2><?php echo wp_kses($headline['title'], ['br' => []]); ?></h2>
     <?php endif; ?>
     <?php if (!empty($headline['subtitle'])) : ?>
-      <span><?php echo esc_html($headline['subtitle']); ?></span>
+      <span><?php echo wp_kses($headline['subtitle'], ['br' => []]); ?></span>
     <?php endif; ?>
   </div>
 
