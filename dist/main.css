@@ -1128,6 +1128,8 @@ header.open-menu .toggle-menu .close-icon {
   gap: 25px;
   padding: 25px;
   text-align: center;
+  background: #11002B;
+  justify-content: center;
 }
 @media (min-width: 768px) {
   .contact .action {
