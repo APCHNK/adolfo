@@ -24,6 +24,7 @@ $tracks_json = array_map(function ($track) {
 }, $tracks);
 
 $play_icon = get_template_directory_uri() . '/assets/icons/play-icon.svg';
+$pause_icon = get_template_directory_uri() . '/assets/icons/pause-icon.svg';
 $first_url = $tracks_json[0]['spotify_url'] ?? '';
 ?>
 <div class="player">
@@ -52,7 +53,8 @@ $first_url = $tracks_json[0]['spotify_url'] ?? '';
       <?php foreach ($tracks_json as $i => $song) : ?>
         <div class="library-song <?php echo $i === 0 ? 'is-playing' : ''; ?>" data-spotify-url="<?php echo esc_url($song['spotify_url']); ?>">
           <div class="song-info">
-            <img src="<?php echo esc_url($play_icon); ?>" alt="play" class="play song-play-icon" width="20" height="20">
+            <img src="<?php echo esc_url($play_icon); ?>" alt="play" class="song-play-icon play-icon" width="32" height="32">
+            <img src="<?php echo esc_url($pause_icon); ?>" alt="pause" class="song-play-icon pause-icon" width="32" height="32">
             <div>
               <span class="song-name"><?php echo esc_html($song['track_name']); ?></span>
               <span class="artist"><?php echo esc_html($song['artist']); ?></span>

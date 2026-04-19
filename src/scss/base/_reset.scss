@@ -7,8 +7,14 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  background: $color-dark;
+}
+
 body {
   word-break: break-word;
+  color: $color-white;
 }
 
 :focus,

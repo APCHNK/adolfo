@@ -43,13 +43,14 @@
       align-items: center;
       display: flex;
       flex-direction: column;
+      font-family: $font-serif;
       gap: 20px;
       justify-content: center;
       width: 100%;
 
       @include media-tablet {
         align-items: baseline;
-        gap: 40px;
+        gap: 34px;
         width: auto;
       }
 
@@ -77,25 +78,29 @@
         h1,
         p {
           color: $color-white;
-
-          @include media-tablet {
-            color: $color-dark;
-          }
         }
 
         p {
+          font-family: $font-serif;
           font-size: 16px;
           font-weight: 500;
+          line-height: 24px;
 
           @include media-laptop-l {
-            font-size: 24px;
+            font-size: 20px;
+            line-height: 30px;
           }
         }
       }
     }
 
     .btn-wrap {
+      font-family: $font-sans;
       min-width: 200px;
+
+      .button {
+        min-width: 200px;
+      }
     }
   }
 }

@@ -54,7 +54,7 @@ endif;
           </div>
           <?php if (!empty($item['link'])) : ?>
             <a href="<?php echo esc_url($item['link']); ?>" target="_blank" rel="noopener noreferrer">
-              <button class="button button--secondary button--small">Buy tickets</button>
+              <button class="button button--outline">Buy tickets</button>
             </a>
           <?php endif; ?>
         </div>

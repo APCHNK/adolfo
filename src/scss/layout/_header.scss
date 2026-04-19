@@ -135,6 +135,7 @@ header {
 
         a {
           color: $color-dark;
+          font-family: $font-serif;
           font-size: 20px;
           font-weight: 700;
           transition: 0.3s;
@@ -146,7 +147,8 @@ header {
           }
 
           @include media-laptop {
-            border-radius: 34px;
+            border-radius: 4px;
+            color: $color-white;
             font-size: 16px;
             font-weight: 700;
             padding: 12px 16px;
@@ -157,10 +159,10 @@ header {
 
             @include media-laptop {
               background: $color-primary;
-              color: $color-white;
+              color: #000;
 
               &:hover {
-                color: $color-white;
+                color: #000;
               }
             }
           }
@@ -293,44 +295,35 @@ header {
             top: calc(100% + 8px);
             left: 0;
             transform: translateY(-10px) scale(0.95);
-            background: $color-white;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
-            min-width: 200px;
-            padding: 8px;
+            background: rgba(#030305, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 4px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            min-width: 230px;
+            padding: 8px 0;
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                         transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
                         visibility 0.3s;
             z-index: 100;
-            border: 1px solid rgba($color-primary, 0.08);
             list-style: none;
             margin: 0;
 
             &::before {
-              content: '';
-              position: absolute;
-              top: -6px;
-              left: 20px;
-              width: 12px;
-              height: 12px;
-              background: $color-white;
-              border-top: 1px solid rgba($color-primary, 0.08);
-              border-left: 1px solid rgba($color-primary, 0.08);
-              transform: rotate(45deg);
-              opacity: 0;
-              transition: opacity 0.2s ease 0.1s;
+              content: none;
             }
 
             li {
               width: 100%;
               list-style: none;
-              margin: 0 0 4px 0;
+              margin: 0;
               padding: 0;
               opacity: 0;
               transform: translateY(-5px);
               transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+              border-bottom: 1px solid rgba($color-white, 0.1);
 
               &:nth-child(1) { transition-delay: 0.05s; }
               &:nth-child(2) { transition-delay: 0.1s; }
@@ -339,31 +332,28 @@ header {
               &:nth-child(5) { transition-delay: 0.25s; }
 
               &:last-child {
-                margin-bottom: 0;
+                border-bottom: none;
               }
 
               a {
                 display: block;
                 width: 100%;
-                padding: 12px 16px;
+                padding: 10px 16px;
                 font-size: 14px;
-                border-radius: 10px;
+                border-radius: 0;
                 text-align: left;
-                color: $color-dark;
-                font-weight: 600;
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                color: $color-white;
+                font-weight: 500;
+                transition: background 0.2s ease, color 0.2s ease;
                 position: relative;
                 box-sizing: border-box;
 
                 &:hover {
-                  background: rgba($color-primary, 0.08);
+                  background: rgba($color-primary, 0.12);
                   color: $color-primary;
-                  padding-left: 20px;
-                  transform: translateX(2px);
                 }
 
                 &.current {
-                  background: rgba($color-primary, 0.12);
                   color: $color-primary;
                 }
               }

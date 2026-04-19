@@ -1,4 +1,13 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-serif;
+}
+
+.app-wrapper {
+    background: $color-dark;
+}
+
 main {
+    background: $color-dark;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -43,15 +52,39 @@ main {
 }
 
 .light-bg {
-    background: $color-light;
+    background: $color-dark;
+    color: $color-white;
 }
 
 .banner-bg {
-    background: #EDD4D4;
+    background: $color-dark;
+    color: $color-white;
 }
 
 .white-bg {
-    background: $color-white;
+    background: $color-dark;
+    color: $color-white;
+}
+
+// Dark sections: invert text colors for headings and body copy
+.light-bg,
+.white-bg,
+.banner-bg {
+    h1, h2, h3, h4, h5, h6,
+    p, span, li {
+        color: $color-white;
+    }
+}
+
+// Footer strip stays light-pink with dark text (only <footer> element)
+footer.light-bg {
+    background: $color-light;
+    color: $color-dark;
+
+    h1, h2, h3, h4, h5, h6,
+    p, span, a, li {
+        color: $color-dark;
+    }
 }
 
 body.menu-open {

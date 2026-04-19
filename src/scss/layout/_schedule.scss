@@ -4,16 +4,16 @@
   gap: 20px;
   padding: 30px 0;
 
+  @include media-tablet {
+    gap: 40px;
+  }
+
   @include media-laptop {
     padding: 80px 0;
   }
 
-  @include media-tablet {
-    gap: 30px;
-  }
-
   @include media-laptop-l {
-    gap: 30px;
+    gap: 60px;
   }
 
   ul {
@@ -30,14 +30,17 @@
     }
 
     li {
+      align-items: center;
       display: flex;
       gap: 16px;
+
       @include media-tablet {
-        gap: 26px;
+        gap: 24px;
       }
 
       img {
         border-radius: 24px;
+        flex-shrink: 0;
         height: 91px;
         object-fit: cover;
         width: 91px;
@@ -52,34 +55,49 @@
       .info {
         display: flex;
         flex-direction: column;
+        flex-grow: 1;
+        font-family: $font-sans;
         gap: 16px;
 
         @include media-tablet {
           align-items: center;
           flex-direction: row;
+          gap: 24px;
           justify-content: space-between;
-          width: calc(100% - 166px);
+          width: calc(100% - 164px);
+        }
+
+        > div {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+
+          @include media-tablet {
+            gap: 10px;
+          }
         }
 
         h3 {
+          font-family: $font-sans;
           font-size: 16px;
-          font-weight: 800;
+          font-weight: 700;
+          line-height: 1.2;
 
           @include media-tablet {
             font-size: 32px;
-            font-weight: 700;
+            line-height: 44px;
           }
         }
 
         span {
+          display: block;
           font-size: 14px;
           font-weight: 600;
-          display: block;
-          margin-top: 6px;
+          line-height: 1.4;
 
           @include media-tablet {
             font-size: 16px;
-            margin-top: 10px;
+            line-height: 22px;
           }
         }
 
@@ -90,7 +108,9 @@
     }
     hr {
       background-color: $color-primary;
+      border: 0;
       height: 1px;
+      margin: 0;
     }
   }
 }

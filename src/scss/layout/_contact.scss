@@ -29,6 +29,7 @@
   .action {
     display: flex;
     flex-direction: column;
+    font-family: $font-serif;
     gap: 25px;
     padding: 25px;
     text-align: center;
@@ -56,9 +57,14 @@
 
       p {
         color: $color-white;
-        font-weight: 700;
-        @include media-tablet {
-          font-weight: 600;
+        font-family: $font-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 26px;
+
+        @include media-laptop-l {
+          font-size: 20px;
+          line-height: 30px;
         }
 
         a {
@@ -90,8 +96,12 @@
 
       button,
       a {
-        display: flex;
+        display: inline-flex;
         flex: 1;
+        font-family: $font-sans;
+        padding: 16px 24px;
+        font-size: 20px;
+        line-height: 24px;
       }
     }
   }
