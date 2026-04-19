@@ -15,7 +15,7 @@ header {
   z-index: 3;
 
   &.open-menu {
-    background-color: $color-light;
+    background-color: #0A0E1D;
     position: fixed;
 
     @include media-laptop {
@@ -37,8 +37,8 @@ header {
 
   .toggle-menu {
     cursor: pointer;
-    height: 24px;
-    width: 24px;
+    height: 32px;
+    width: 32px;
     img{
       display: block;
       height: 100%;
@@ -61,7 +61,7 @@ header {
 
   .menu {
     align-items: center;
-    background-color: $color-light;
+    background-color: #0A0E1D;
     bottom: 0;
     display: none;
     flex-direction: column;
@@ -118,7 +118,7 @@ header {
         flex-direction: column;
         gap: 0;
         text-align: left;
-        border-bottom: 1px solid rgba($color-primary, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.16);
 
         &:last-child {
           border-bottom: none;
@@ -134,7 +134,7 @@ header {
         }
 
         a {
-          color: $color-dark;
+          color: #FFFFFF;
           font-family: $font-serif;
           font-size: 20px;
           font-weight: 700;
@@ -175,7 +175,11 @@ header {
         // Desktop submenu styles
         &.has-submenu {
           position: relative;
-
+          &.current{
+            .submenu-indicator{
+              color: $color-dark;
+            }
+          }
           @include media-laptop {
             > a {
               display: inline-flex;
@@ -257,7 +261,7 @@ header {
                 font-weight: 500;
                 opacity: 0.75;
                 transition: all 0.3s ease;
-                color: $color-dark;
+                color: #fff;
                 padding: 8px 0;
                 border-radius: 0;
                 text-align: left;
@@ -376,7 +380,7 @@ header {
             }
 
             > a:not(.current) {
-              color: $color-dark;
+              color: $color-primary;
             }
           }
         }

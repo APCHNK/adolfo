@@ -32,8 +32,14 @@
           <?php endif; ?>
 
           <div class="toggle-menu">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/burger.svg" alt="menu" class="burger-icon" width="32" height="32">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/close.svg" alt="close" class="close-icon" width="32" height="32">
+            
+
+            <svg xmlns="http://www.w3.org/2000/svg"class="burger-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M5.3335 9.33333H26.6668M5.3335 16H26.6668M5.3335 22.6667H26.6668" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="close-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M8 8L24 24M24 8L8 24" stroke="white" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
 
           <nav class="menu">
