@@ -565,6 +565,13 @@ header.open-menu .toggle-menu .close-icon {
     justify-content: flex-end;
     max-width: none;
   }
+  .header-wrap .menu ul:has(> li > a:hover) > li > a.current:not(:hover) {
+    background: transparent;
+    color: #ffffff;
+  }
+  .header-wrap .menu ul:has(> li > a:hover) > li > a.current:not(:hover) .submenu-indicator {
+    color: #ffffff;
+  }
 }
 .header-wrap .menu ul li {
   display: flex;
@@ -623,6 +630,12 @@ header.open-menu .toggle-menu .close-icon {
 .header-wrap .menu ul li a:hover {
   color: #ffbe40;
 }
+@media (min-width: 1024px) {
+  .header-wrap .menu ul li a:hover {
+    background: #ffbe40;
+    color: #000;
+  }
+}
 .header-wrap .menu ul li.has-submenu {
   position: relative;
 }
@@ -638,8 +651,11 @@ header.open-menu .toggle-menu .close-icon {
   .header-wrap .menu ul li.has-submenu > a .submenu-indicator {
     font-size: 10px;
     line-height: 1;
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease, color 0.2s ease;
     opacity: 0.7;
+  }
+  .header-wrap .menu ul li.has-submenu > a:hover .submenu-indicator {
+    color: #0a0e1d;
   }
   .header-wrap .menu ul li.has-submenu:hover > a .submenu-indicator {
     transform: rotate(180deg);

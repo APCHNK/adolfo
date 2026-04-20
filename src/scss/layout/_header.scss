@@ -111,6 +111,15 @@ header {
         flex-direction: row;
         justify-content: flex-end;
         max-width: none;
+
+        &:has(> li > a:hover) > li > a.current:not(:hover) {
+          background: transparent;
+          color: $color-white;
+
+          .submenu-indicator {
+            color: $color-white;
+          }
+        }
       }
 
       li {
@@ -169,6 +178,11 @@ header {
 
           &:hover {
             color: $color-primary;
+
+            @include media-laptop {
+              background: $color-primary;
+              color: #000;
+            }
           }
         }
 
@@ -190,8 +204,13 @@ header {
                 font-size: 10px;
                 line-height: 1;
                 transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-                            opacity 0.3s ease;
+                            opacity 0.3s ease,
+                            color 0.2s ease;
                 opacity: 0.7;
+              }
+
+              &:hover .submenu-indicator {
+                color: $color-dark;
               }
             }
 
