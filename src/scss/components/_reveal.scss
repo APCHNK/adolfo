@@ -1,0 +1,32 @@
+// Reveal-on-scroll replacement for wow.js.
+// Elements start hidden and fade+translate into view when JS adds .is-visible.
+
+.reveal {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal--up    { transform: translate3d(0, 24px, 0); }
+.reveal--left  { transform: translate3d(-24px, 0, 0); }
+.reveal--right { transform: translate3d(24px, 0, 0); }
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+// No JS? Show content.
+.no-js .reveal,
+html:not(.js) .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

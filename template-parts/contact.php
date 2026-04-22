@@ -15,9 +15,13 @@ if (!$title && !$text) return;
   <div class="columnar">
     <div class="contact">
       <?php if (!empty($image['url'])) : ?>
-        <img class="wow fadeInLeft" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt'] ?? ''); ?>">
+        <?php echo adolfo_render_image($image, array(
+          'class'   => 'reveal reveal--left',
+          'loading' => 'lazy',
+          'sizes'   => '(max-width: 1023px) 100vw, 50vw',
+        )); ?>
       <?php endif; ?>
-      <div class="action wow fadeInRight" data-wow-delay="0.2s">
+      <div class="action reveal reveal--right" data-reveal-delay="200">
         <?php if ($title) : ?>
           <h2><?php echo esc_html($title); ?></h2>
         <?php endif; ?>

@@ -5,6 +5,8 @@
 
 if (!defined('ABSPATH')) exit;
 
+require_once get_template_directory() . '/inc/image-helper.php';
+
 // -----------------------------------------------------------------------------
 // Theme Setup
 // -----------------------------------------------------------------------------
@@ -148,13 +150,44 @@ add_action('template_redirect', function () {
 // Preload LCP image (banner) for faster rendering
 // -----------------------------------------------------------------------------
 add_action('wp_head', function () {
-    if (is_front_page()) {
-        $banner = get_field('banner');
-        $image = $banner['image'] ?? null;
-        if ($image) {
-            echo '<link rel="preload" as="image" href="' . esc_url($image['url']) . '" fetchpriority="high">' . "\n";
+    if (!is_front_page()) return;
+    $banner = get_field('banner');
+    $image  = $banner['image'] ?? null;
+    if (!$image) return;
+
+    $webp = adolfo_webp_sibling($image['url']);
+    $href = $webp ?: $image['url'];
+    $type = $webp ? ' type="image/webp"' : '';
+
+    $srcset = '';
+    $sizes  = '';
+    if (!empty($image['id'])) {
+        $auto_srcset = wp_get_attachment_image_srcset($image['id'], 'full');
+        if ($auto_srcset) {
+            if ($webp) {
+                $parts = array_map('trim', explode(',', $auto_srcset));
+                $mapped = array();
+                foreach ($parts as $part) {
+                    if (preg_match('/^(\S+)(\s+.+)?$/', $part, $m)) {
+                        $c = adolfo_webp_sibling($m[1]);
+                        if ($c) $mapped[] = $c . ($m[2] ?? '');
+                    }
+                }
+                if (count($mapped) === count($parts)) $srcset = implode(', ', $mapped);
+            } else {
+                $srcset = $auto_srcset;
+            }
+            $sizes = wp_get_attachment_image_sizes($image['id'], 'full') ?: '100vw';
         }
     }
+
+    printf(
+        '<link rel="preload" as="image" href="%s"%s%s%s fetchpriority="high">' . "\n",
+        esc_url($href),
+        $type,
+        $srcset ? ' imagesrcset="' . esc_attr($srcset) . '"' : '',
+        $sizes  ? ' imagesizes="'  . esc_attr($sizes)  . '"' : ''
+    );
 }, 1);
 
 // -----------------------------------------------------------------------------

@@ -6,7 +6,7 @@ if (!$cards || !is_array($cards) || count($cards) === 0) return;
 ?>
 <div class="songs-section">
   <?php if ($songs_title) : ?>
-    <h2 class="wow fadeInUp"><?php echo esc_html($songs_title); ?></h2>
+    <h2 class="reveal reveal--up"><?php echo esc_html($songs_title); ?></h2>
   <?php endif; ?>
   <div class="songs-grid">
     <?php foreach ($cards as $index => $card) :
@@ -15,7 +15,7 @@ if (!$cards || !is_array($cards) || count($cards) === 0) return;
       $desc = $card['description'] ?? '';
       $url = $card['url'] ?? '#';
     ?>
-      <a href="<?php echo esc_url($url); ?>" target="_blank" rel="noopener noreferrer" class="songs-card wow fadeInUp" data-wow-delay="<?php echo ($index * 0.08); ?>s">
+      <a href="<?php echo esc_url($url); ?>" target="_blank" rel="noopener noreferrer" class="songs-card reveal reveal--up" data-reveal-delay="<?php echo ($index * 80); ?>">
         <?php if ($image) : ?>
           <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($title); ?>" loading="lazy">
         <?php endif; ?>

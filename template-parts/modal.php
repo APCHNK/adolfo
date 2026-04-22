@@ -61,7 +61,7 @@ if ($form_id) {
       </div>
 
       <div class="success-message" style="display:none;">
-        <img src="<?php echo esc_url($success_img); ?>" alt="success">
+        <img src="<?php echo esc_url($success_img); ?>" alt="success" width="220" height="220" loading="lazy" decoding="async">
         <p>Request Sent Successfully!</p>
         <p>Thank you for your interest in Boney M.</p>
         <p>We will be delighted to perform for you.</p>

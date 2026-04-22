@@ -6,6 +6,7 @@ import { initLazyIframes } from './js/iframe-lazy';
 import { initBookingVideo } from './js/booking-video';
 import { initTextSliders } from './js/text-slider';
 import { initFaq } from './js/faq';
+import { initReveal } from './js/reveal';
 
 document.addEventListener('DOMContentLoaded', () => {
   initBurger();
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTextSliders();
   window.initTextSliders = initTextSliders;
   initFaq();
+  initReveal();
 
   // Reveal on scroll
   document.querySelectorAll('.page .img-wrap').forEach(el => {

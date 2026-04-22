@@ -6,12 +6,12 @@ if (!$headline || !$videos) return;
 ?>
 <div class="media">
   <?php if ($headline) : ?>
-    <h2 class="wow fadeInUp"><?php echo esc_html($headline); ?></h2>
+    <h2 class="reveal reveal--up"><?php echo esc_html($headline); ?></h2>
   <?php endif; ?>
   <div class="half">
     <?php foreach ($videos as $index => $video) : ?>
       <?php if (!empty($video['url'])) : ?>
-        <div class="media-wrap wow fadeInUp" data-wow-delay="<?php echo ($index * 0.15); ?>s">
+        <div class="media-wrap reveal reveal--up" data-reveal-delay="<?php echo ($index * 150); ?>">
           <iframe
             title="iframe <?php echo $index; ?>"
             data-src="<?php echo esc_url($video['url']); ?>"

@@ -3,7 +3,7 @@ $mux_id = get_sub_field('mux_playback_id');
 if (!$mux_id) return;
 ?>
 <div class="booking-hero">
-  <div class="booking-hero__video wow fadeInUp" data-wow-duration="1s" data-mux-id="<?php echo esc_attr($mux_id); ?>">
+  <div class="booking-hero__video reveal reveal--up" data-mux-id="<?php echo esc_attr($mux_id); ?>">
   </div>
 </div>
 <script>

@@ -13,26 +13,31 @@ if (!$title) return;
 ?>
 <div class="banner banner-bg">
   <div class="banner-img">
-    <?php if ($image) : ?>
-      <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['title'] ?? ''); ?>" width="<?php echo esc_attr($image['width'] ?? ''); ?>" height="<?php echo esc_attr($image['height'] ?? ''); ?>" fetchpriority="high">
-    <?php endif; ?>
+    <?php
+    echo adolfo_render_image($image, array(
+        'loading'       => 'eager',
+        'fetchpriority' => 'high',
+        'decoding'      => 'sync',
+        'sizes'         => '100vw',
+    ));
+    ?>
   </div>
   <div class="columnar vertical">
     <div class="banner-wrap">
       <div class="heading">
         <div>
           <?php if ($mark_text) : ?>
-            <span class="banner-mark wow-desktop fadeInUp" data-wow-delay="0.2s"><?php echo esc_html($mark_text); ?></span>
+            <span class="banner-mark reveal reveal--desktop" data-reveal-delay="200"><?php echo esc_html($mark_text); ?></span>
           <?php endif; ?>
           <?php if ($title) : ?>
-            <h1 class="wow-desktop fadeInUp" data-wow-delay="0.3s"><?php echo esc_html($title); ?></h1>
+            <h1 class="reveal reveal--desktop" data-reveal-delay="300"><?php echo esc_html($title); ?></h1>
           <?php endif; ?>
           <?php if ($subtitle) : ?>
-            <p class="wow-desktop fadeInUp" data-wow-delay="0.5s"><?php echo esc_html($subtitle); ?></p>
+            <p class="reveal reveal--desktop" data-reveal-delay="500"><?php echo esc_html($subtitle); ?></p>
           <?php endif; ?>
         </div>
         <?php if (!empty($button['link']['title'])) : ?>
-          <div class="btn-wrap wow-desktop fadeInUp" data-wow-delay="0.7s">
+          <div class="btn-wrap reveal reveal--desktop" data-reveal-delay="700">
             <?php if ($use_modal) : ?>
               <button class="button button--primary" data-open-modal>
                 <?php echo esc_html($button['link']['title']); ?>

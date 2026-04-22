@@ -35,11 +35,11 @@ endif;
 ?>
 <div class="schedule">
   <?php if ($title) : ?>
-    <h2 class="wow fadeInUp"><?php echo esc_html($title); ?></h2>
+    <h2 class="reveal reveal--up"><?php echo esc_html($title); ?></h2>
   <?php endif; ?>
   <ul>
     <?php foreach ($filtered as $index => $item) : ?>
-      <li class="wow fadeInUp" data-wow-delay="<?php echo ($index * 0.1); ?>s">
+      <li class="reveal reveal--up" data-reveal-delay="<?php echo ($index * 100); ?>">
         <?php if (!empty($item['image'])) : ?>
           <img src="<?php echo esc_url($item['image']['url']); ?>" alt="<?php echo esc_attr($item['image']['alt'] ?? ''); ?>" width="140" height="140" loading="lazy">
         <?php endif; ?>
@@ -60,7 +60,7 @@ endif;
         </div>
       </li>
       <?php if ($index < count($filtered) - 1) : ?>
-        <hr class="wow fadeIn" data-wow-delay="<?php echo (count($filtered) * 0.1 + 0.5); ?>s">
+        <hr class="reveal" data-reveal-delay="<?php echo (count($filtered) * 100 + 500); ?>">
       <?php endif; ?>
     <?php endforeach; ?>
   </ul>

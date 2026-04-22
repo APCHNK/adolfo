@@ -29,10 +29,10 @@ $first_url = $tracks_json[0]['spotify_url'] ?? '';
 ?>
 <div class="player<?php echo count($tracks_json) > 1 ? ' has-tracklist' : ''; ?>">
   <?php if ($headline) : ?>
-    <h2 class="wow fadeInUp"><?php echo esc_html($headline); ?></h2>
+    <h2 class="reveal reveal--up"><?php echo esc_html($headline); ?></h2>
   <?php endif; ?>
 
-  <div class="player-wrap wow fadeInUp" data-wow-delay="0.2s">
+  <div class="player-wrap reveal reveal--up" data-reveal-delay="200">
     <div class="spotify-embed">
       <?php if ($first_url) : ?>
         <iframe

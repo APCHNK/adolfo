@@ -6,11 +6,11 @@ if (!$questions || !is_array($questions) || count($questions) === 0) return;
 ?>
 <div class="faq">
   <?php if ($title) : ?>
-    <h2 class="wow fadeInUp"><?php echo esc_html($title); ?></h2>
+    <h2 class="reveal reveal--up"><?php echo esc_html($title); ?></h2>
   <?php endif; ?>
   <div class="faq__list">
     <?php foreach ($questions as $index => $item) : ?>
-      <div class="faq__item wow fadeInUp" data-wow-delay="<?php echo ($index * 0.06); ?>s">
+      <div class="faq__item reveal reveal--up" data-reveal-delay="<?php echo ($index * 60); ?>">
         <button class="faq__question" type="button">
           <span><?php echo esc_html($item['question']); ?></span>
           <svg class="faq__arrow" width="26" height="26" viewBox="0 0 26 26" fill="none">

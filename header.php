@@ -9,7 +9,6 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:wght@400..900&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet"></noscript>
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/animate.min.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
   <?php wp_head(); ?>
 </head>
@@ -23,11 +22,16 @@
           $logo = get_field('header_logo', 'option') ?: get_field('logo', 'option');
           if ($logo) : ?>
             <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
-              <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt'] ?: get_bloginfo('name')); ?>">
+              <?php echo adolfo_render_image($logo, array(
+                'loading'       => 'eager',
+                'fetchpriority' => 'high',
+                'decoding'      => 'sync',
+                'sizes'         => '(max-width: 1023px) 175px, 220px',
+              )); ?>
             </a>
           <?php else : ?>
             <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/logo.svg" alt="<?php bloginfo('name'); ?>">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/logo.svg" alt="<?php bloginfo('name'); ?>" width="175" height="48">
             </a>
           <?php endif; ?>
 
