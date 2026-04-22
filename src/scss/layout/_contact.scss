@@ -12,13 +12,13 @@
   }
 
   > picture {
-    display: flex;
-    flex-direction: column;
+    display: block;
+    width: 100%;
     flex-shrink: 0;
-    align-self: stretch;
-    line-height: 0;
 
     @include media-tablet {
+      align-self: stretch;
+      position: relative;
       width: 320px;
     }
     @include media-laptop-l {
@@ -34,9 +34,9 @@
     object-position: top;
 
     @include media-tablet {
-      flex: 1;
-      height: auto;
-      min-height: 0;
+      position: absolute;
+      inset: 0;
+      height: 100%;
     }
   }
 
