@@ -35,6 +35,111 @@ header {
   position: relative;
   width: 100%;
 
+  // Right-aligned cluster: Instagram + divider + Ru/En lang switcher (per Figma 5G Golden Copy node 728:82).
+  // Hidden on mobile (extras render inside the mobile menu via .menu-extras).
+  .header-extras {
+    align-items: center;
+    display: none;
+    flex-shrink: 0;
+    gap: 12px;
+
+    > * {
+      flex-shrink: 0;
+    }
+
+    @include media-laptop {
+      display: inline-flex;
+      margin-right: 16px;
+      order: 2;
+    }
+  }
+
+  .header-social {
+    align-items: center;
+    color: $color-white;
+    display: inline-flex;
+    height: 32px;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+    width: 32px;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.75;
+    }
+
+    svg {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .header-divider {
+    background: rgba($color-white, 0.4);
+    display: inline-block;
+    height: 31px;
+    width: 1px;
+  }
+
+  // Square pill buttons per Figma: active = white fill / dark text, inactive = transparent / white border.
+  .lang-switcher {
+    align-items: center;
+    display: inline-flex;
+    flex-shrink: 0;
+    gap: 4px;
+
+    a {
+      align-items: center;
+      border: 1px solid $color-white;
+      box-sizing: border-box;
+      color: $color-white;
+      display: inline-flex;
+      flex-shrink: 0;
+      font-family: $font-sans;
+      font-size: 16px;
+      font-weight: 700;
+      height: 32px;
+      justify-content: center;
+      line-height: 1;
+      min-width: 48px;
+      padding: 0 12px;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      white-space: nowrap;
+      word-break: keep-all;
+
+      &.is-active {
+        background: $color-white;
+        color: $color-dark;
+      }
+
+      &:hover {
+        background: $color-white;
+        color: $color-dark;
+      }
+    }
+  }
+
+  // Mobile-only copy of the extras inside the open menu.
+  .menu-extras {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 32px;
+    width: 100%;
+
+    @include media-laptop {
+      display: none;
+    }
+
+    @media screen and (max-width: 767px) {
+      justify-content: flex-start;
+      padding: 0 16px;
+    }
+  }
+
   .toggle-menu {
     cursor: pointer;
     height: 32px;

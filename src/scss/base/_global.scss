@@ -10,14 +10,17 @@ main {
     background: $color-dark;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+}
+
+main > *:not(.banner-bg) {
+    padding-block: 20px;
 
     @include media-tablet {
-        gap: 60px;
+        padding-block: 30px;
     }
 
     @include media-laptop {
-        gap: 80px;
+        padding-block: 40px;
     }
 }
 

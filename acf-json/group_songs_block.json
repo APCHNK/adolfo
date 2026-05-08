@@ -49,6 +49,16 @@
                     "type": "url"
                 }
             ]
+        },
+        {
+            "key": "field_songs_vinyl_image",
+            "label": "Vinyl Center Photo",
+            "name": "vinyl_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "instructions": "Optional B&W band photo shown in the center of the vinyl record below the cards."
         }
     ],
     "location": [

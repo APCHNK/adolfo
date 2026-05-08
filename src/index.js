@@ -7,6 +7,7 @@ import { initBookingVideo } from './js/booking-video';
 import { initTextSliders } from './js/text-slider';
 import { initFaq } from './js/faq';
 import { initReveal } from './js/reveal';
+import { initVinylSpin } from './js/vinyl-spin';
 
 document.addEventListener('DOMContentLoaded', () => {
   initBurger();
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.initTextSliders = initTextSliders;
   initFaq();
   initReveal();
+  initVinylSpin();
 
   // Reveal on scroll
   document.querySelectorAll('.page .img-wrap').forEach(el => {

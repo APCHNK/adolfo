@@ -10,6 +10,20 @@
             "return_format": "array",
             "preview_size": "medium",
             "library": "all"
+        },
+        {
+            "key": "field_header_lang_ru_url",
+            "label": "Ru site URL",
+            "name": "lang_ru_url",
+            "type": "url",
+            "instructions": "Used by the header language switcher. Leave empty to hide."
+        },
+        {
+            "key": "field_header_lang_en_url",
+            "label": "En site URL",
+            "name": "lang_en_url",
+            "type": "url",
+            "instructions": "Used by the header language switcher. Leave empty to hide."
         }
     ],
     "location": [

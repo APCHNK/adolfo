@@ -1,6 +1,7 @@
 <?php
 $songs_title = get_sub_field('title');
 $cards = get_sub_field('cards');
+$vinyl_image = get_sub_field('vinyl_image');
 
 if (!$cards || !is_array($cards) || count($cards) === 0) return;
 ?>
@@ -29,5 +30,15 @@ if (!$cards || !is_array($cards) || count($cards) === 0) return;
         </div>
       </a>
     <?php endforeach; ?>
+  </div>
+
+  <div class="songs-vinyl reveal reveal--up" aria-hidden="true">
+    <div class="songs-vinyl__disc">
+      <?php if (!empty($vinyl_image['url'])) : ?>
+        <div class="songs-vinyl__photo">
+          <img src="<?php echo esc_url($vinyl_image['url']); ?>" alt="<?php echo esc_attr($vinyl_image['alt'] ?? ''); ?>" loading="lazy">
+        </div>
+      <?php endif; ?>
+    </div>
   </div>
 </div>
