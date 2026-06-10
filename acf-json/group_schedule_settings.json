@@ -68,6 +68,26 @@
                     "maxlength": ""
                 },
                 {
+                    "key": "field_sched_text_ru",
+                    "label": "Text (RU)",
+                    "name": "text_ru",
+                    "type": "text",
+                    "instructions": "Optional. Shown on the /ru/ version instead of Text.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 1,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_sched_date",
                     "label": "Date",
                     "name": "date",
@@ -81,8 +101,8 @@
                         "id": ""
                     },
                     "show_in_graphql": 1,
-                    "display_format": "d\/m\/Y",
-                    "return_format": "d\/m\/Y",
+                    "display_format": "d/m/Y",
+                    "return_format": "d/m/Y",
                     "first_day": 1
                 },
                 {
