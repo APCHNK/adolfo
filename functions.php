@@ -54,6 +54,14 @@ if (function_exists('acf_add_options_page')) {
         'icon_url'   => 'dashicons-arrow-down-alt',
         'position'   => 61,
     ));
+
+    acf_add_options_page(array(
+        'menu_slug'  => 'schedule-settings',
+        'page_title' => 'Schedule Settings',
+        'menu_title' => 'Schedule',
+        'icon_url'   => 'dashicons-calendar-alt',
+        'position'   => 62,
+    ));
 }
 
 // -----------------------------------------------------------------------------

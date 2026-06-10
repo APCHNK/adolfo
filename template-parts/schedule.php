@@ -1,6 +1,12 @@
 <?php
-$title = get_sub_field('title');
-$items = get_sub_field('items');
+$title = get_sub_field('title'); // section title stays editable on the page block
+$items = get_field('schedule_items', 'option'); // dates managed globally in the Schedule options page
+
+// Fallback to the legacy per-page items so existing pages keep working
+// until the Schedule options page is filled in.
+if (!$items || !is_array($items)) {
+  $items = get_sub_field('items');
+}
 
 if (!$items || !is_array($items)) return;
 
