@@ -298,6 +298,9 @@ add_filter('acf/format_value/name=contact', function ($value, $post_id, $field) 
         if (!empty($value['book_button_text_ru']) && is_array($value['book_button'] ?? null)) {
             $value['book_button']['title'] = $value['book_button_text_ru'];
         }
+        if (!empty($value['email_button_text_ru'])) {
+            $value['email_button_text'] = $value['email_button_text_ru'];
+        }
     }
     return $value;
 }, 10, 3);

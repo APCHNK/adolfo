@@ -201,6 +201,69 @@
                     "default_value": "book.boneym@gmail.com"
                 },
                 {
+                    "key": "field_contact_email_button_text",
+                    "label": "Email Button Text",
+                    "name": "email_button_text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Optional. Label of the second button. Default: Email.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 1,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_contact_email_button_text_ru",
+                    "label": "Email Button Text (RU)",
+                    "name": "email_button_text_ru",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Optional. Shown on the RU version instead of Email Button Text.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 1,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_contact_email_button_url",
+                    "label": "Email Button Link",
+                    "name": "email_button_url",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Optional. Any URL; overrides the default mailto: link built from Email.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 1,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_66e86af71cb69",
                     "label": "Book Button",
                     "name": "book_button",

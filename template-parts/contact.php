@@ -40,7 +40,11 @@ if (!$title && !$text) return;
               </a>
             <?php endif; ?>
           <?php endif; ?>
-          <a href="mailto:<?php echo esc_attr($email); ?>" class="button button--outline">Email</a>
+          <?php
+          $email_btn_text = !empty($contact['email_button_text']) ? $contact['email_button_text'] : 'Email';
+          $email_btn_url  = !empty($contact['email_button_url']) ? $contact['email_button_url'] : 'mailto:' . $email;
+          ?>
+          <a href="<?php echo esc_url($email_btn_url); ?>" class="button button--outline"><?php echo esc_html($email_btn_text); ?></a>
         </div>
       </div>
     </div>
