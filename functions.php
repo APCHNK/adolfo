@@ -312,3 +312,6 @@ add_filter('acf/format_value/name=footer_copyright', function ($value, $post_id,
     $ru = get_field('footer_copyright_ru', 'option');
     return $ru ?: $value;
 }, 10, 3);
+
+// Tools -> Fix URL Slugs (repairs '-2' suffixed translation slugs)
+require_once get_template_directory() . '/inc/fix-translation-slugs.php';
