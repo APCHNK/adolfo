@@ -282,3 +282,30 @@ class Theme_Menu_Walker extends Walker_Nav_Menu {
         $output .= '</li>';
     }
 }
+
+
+// -----------------------------------------------------------------------------
+// RU texts for the global contact block + footer copyright (ACF options are
+// not multilingual). Fill the "(RU)" fields in Theme Options; the Russian
+// version swaps them in automatically on the frontend.
+add_filter('acf/format_value/name=contact', function ($value, $post_id, $field) {
+    if ($post_id !== 'option' && $post_id !== 'options') return $value;
+    if (is_admin() && !wp_doing_ajax()) return $value;
+    if (strpos(get_locale(), 'ru') !== 0) return $value;
+    if (is_array($value)) {
+        if (!empty($value['title_ru'])) $value['title'] = $value['title_ru'];
+        if (!empty($value['text_ru']))  $value['text']  = $value['text_ru'];
+        if (!empty($value['book_button_text_ru']) && is_array($value['book_button'] ?? null)) {
+            $value['book_button']['title'] = $value['book_button_text_ru'];
+        }
+    }
+    return $value;
+}, 10, 3);
+
+add_filter('acf/format_value/name=footer_copyright', function ($value, $post_id, $field) {
+    if ($post_id !== 'option' && $post_id !== 'options') return $value;
+    if (is_admin() && !wp_doing_ajax()) return $value;
+    if (strpos(get_locale(), 'ru') !== 0) return $value;
+    $ru = get_field('footer_copyright_ru', 'option');
+    return $ru ?: $value;
+}, 10, 3);

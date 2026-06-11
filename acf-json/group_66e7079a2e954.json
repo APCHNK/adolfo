@@ -109,11 +109,52 @@
                     "maxlength": ""
                 },
                 {
+                    "key": "field_contact_title_ru",
+                    "label": "Title (RU)",
+                    "name": "title_ru",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Optional. Shown on the RU version instead of Title.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 1,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_66e86ae61cb68",
                     "label": "Text",
                     "name": "text",
                     "type": "wysiwyg",
                     "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 1,
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
+                    "key": "field_contact_text_ru",
+                    "label": "Text (RU)",
+                    "name": "text_ru",
+                    "type": "wysiwyg",
+                    "instructions": "Optional. Shown on the RU version instead of Text.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -174,6 +215,27 @@
                     },
                     "show_in_graphql": 1,
                     "return_format": "array"
+                },
+                {
+                    "key": "field_contact_book_button_text_ru",
+                    "label": "Book Button Text (RU)",
+                    "name": "book_button_text_ru",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Optional. RU version replaces the button label (URL stays the same).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 1,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         },
@@ -190,7 +252,9 @@
                     "name": "title",
                     "type": "text",
                     "default_value": "Social Media",
-                    "wrapper": { "width": "50" }
+                    "wrapper": {
+                        "width": "50"
+                    }
                 },
                 {
                     "key": "field_instagram_btn_text",
@@ -198,7 +262,9 @@
                     "name": "btn_text",
                     "type": "text",
                     "default_value": "View more on Instagram",
-                    "wrapper": { "width": "50" }
+                    "wrapper": {
+                        "width": "50"
+                    }
                 },
                 {
                     "key": "field_instagram_url",

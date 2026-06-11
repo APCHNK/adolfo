@@ -10,6 +10,14 @@
             "default_value": "Boney M Liz Mitchell. All Right Reserved"
         },
         {
+            "key": "field_footer_copyright_ru",
+            "label": "Copyright Text (RU)",
+            "name": "footer_copyright_ru",
+            "type": "text",
+            "default_value": "Boney M Liz Mitchell. All Right Reserved",
+            "instructions": "Optional. Shown on the RU version instead of Copyright Text."
+        },
+        {
             "key": "field_footer_email",
             "label": "Email",
             "name": "footer_email",
