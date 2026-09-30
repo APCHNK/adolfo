@@ -315,3 +315,4 @@ add_filter('acf/format_value/name=footer_copyright', function ($value, $post_id,
 
 // Tools -> Fix URL Slugs (repairs '-2' suffixed translation slugs)
 require_once get_template_directory() . '/inc/fix-translation-slugs.php';
+require_once get_template_directory() . '/inc/seo-front-translation.php';
