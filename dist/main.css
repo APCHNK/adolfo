@@ -1061,7 +1061,7 @@ header.open-menu .toggle-menu .close-icon {
 }
 @media (min-width: 1280px) {
   .banner {
-    height: 840px;
+    height: 100vh;
   }
 }
 .banner::after {
