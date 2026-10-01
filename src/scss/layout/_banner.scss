@@ -185,3 +185,10 @@
     }
   }
 }
+
+// Wide screens: the full-width hero is cropped vertically; keep the top (heads) in view.
+@media (min-width: 1441px) {
+  .banner .banner-img img {
+    object-position: 50% 0;
+  }
+}

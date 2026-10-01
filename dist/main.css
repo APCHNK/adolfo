@@ -2681,3 +2681,9 @@ html:not(.js) .reveal {
     transition: none;
   }
 }
+
+@media (min-width: 1441px) {
+  .banner .banner-img img {
+    object-position: 50% 0;
+  }
+}
