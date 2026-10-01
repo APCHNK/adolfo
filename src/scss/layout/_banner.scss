@@ -192,3 +192,10 @@
     object-position: 50% 0;
   }
 }
+
+// The first screen is a full-viewport hero on every device; svh keeps it
+// exactly one screen tall under mobile browser toolbars.
+.banner {
+  height: 100vh;
+  height: 100svh;
+}
