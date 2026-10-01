@@ -41,7 +41,7 @@ endif;
 
 $is_ru = function_exists('pll_current_language') && pll_current_language() === 'ru';
 ?>
-<div class="schedule">
+<div class="schedule" id="tour-dates" style="scroll-margin-top: 120px">
   <?php if ($title) : ?>
     <h2 class="reveal reveal--up"><?php echo esc_html($title); ?></h2>
   <?php endif; ?>
