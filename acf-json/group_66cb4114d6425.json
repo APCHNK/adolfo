@@ -48,7 +48,8 @@
                     "tabs": "all",
                     "toolbar": "full",
                     "media_upload": 1,
-                    "delay": 0
+                    "delay": 0,
+                    "instructions": "Text of this slide."
                 }
             ]
         }
@@ -75,5 +76,5 @@
     "graphql_field_name": "contentBlock",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1776601103
+    "modified": 1790968711
 }

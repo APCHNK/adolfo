@@ -7,7 +7,7 @@
             "label": "Title",
             "name": "title",
             "type": "text",
-            "instructions": "",
+            "instructions": "Heading of the booking block (not shown when a Mux video is used).",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -27,7 +27,7 @@
             "label": "Subtitle",
             "name": "subtitle",
             "type": "text",
-            "instructions": "",
+            "instructions": "Small line of the booking block (not shown when a Mux video is used).",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -107,5 +107,5 @@
     "graphql_field_name": "contentBlock",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1724596798
+    "modified": 1790968711
 }

@@ -32,7 +32,7 @@
             "label": "Form ID",
             "name": "form_id",
             "type": "text",
-            "instructions": "",
+            "instructions": "Contact Form 7 form ID used by the \"Book Now\" pop-up form.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -93,7 +93,7 @@
                     "label": "Title",
                     "name": "title",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "H2 heading of the contact block shown at the bottom of pages (EN).",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -134,7 +134,7 @@
                     "label": "Text",
                     "name": "text",
                     "type": "wysiwyg",
-                    "instructions": "",
+                    "instructions": "Body text of the contact block shown at the bottom of pages (EN).",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -268,7 +268,7 @@
                     "label": "Book Button",
                     "name": "book_button",
                     "type": "link",
-                    "instructions": "",
+                    "instructions": "Main button of the contact block: label + link (EN).",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -317,7 +317,8 @@
                     "default_value": "Social Media",
                     "wrapper": {
                         "width": "50"
-                    }
+                    },
+                    "instructions": "Heading of the Instagram block."
                 },
                 {
                     "key": "field_instagram_btn_text",
@@ -327,14 +328,16 @@
                     "default_value": "View more on Instagram",
                     "wrapper": {
                         "width": "50"
-                    }
+                    },
+                    "instructions": "Label of the button that opens the Instagram profile."
                 },
                 {
                     "key": "field_instagram_url",
                     "label": "Instagram URL",
                     "name": "url",
                     "type": "url",
-                    "default_value": ""
+                    "default_value": "",
+                    "instructions": "Link to the Instagram profile."
                 }
             ]
         }
@@ -361,5 +364,5 @@
     "graphql_field_name": "themeOptions",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1774980000
+    "modified": 1790968711
 }

@@ -7,7 +7,7 @@
             "label": "Headline",
             "name": "headline",
             "type": "text",
-            "instructions": "",
+            "instructions": "H2 heading of the videos block.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -88,5 +88,5 @@
     "graphql_field_name": "contentBlock",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1725564707
+    "modified": 1790968711
 }

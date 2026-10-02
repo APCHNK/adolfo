@@ -7,7 +7,8 @@
             "label": "Title",
             "name": "title",
             "type": "text",
-            "default_value": "FAQ"
+            "default_value": "FAQ",
+            "instructions": "H2 heading of the FAQ block."
         },
         {
             "key": "field_faq_items",
@@ -21,7 +22,8 @@
                     "key": "field_faq_question",
                     "label": "Question",
                     "name": "question",
-                    "type": "text"
+                    "type": "text",
+                    "instructions": "Question text (the clickable line)."
                 },
                 {
                     "key": "field_faq_answer",
@@ -31,7 +33,8 @@
                     "tabs": "all",
                     "toolbar": "full",
                     "media_upload": 0,
-                    "delay": 0
+                    "delay": 0,
+                    "instructions": "Answer text shown when the question is opened."
                 }
             ]
         }
@@ -48,5 +51,5 @@
     "active": false,
     "show_in_rest": 0,
     "show_in_graphql": 0,
-    "modified": 1711900000
+    "modified": 1790968711
 }

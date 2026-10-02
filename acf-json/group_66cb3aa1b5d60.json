@@ -23,7 +23,7 @@
                     "label": "Title",
                     "name": "title",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "H2 heading of the section.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -43,7 +43,7 @@
                     "label": "Subtitle",
                     "name": "subtitle",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Small line shown above the section H2.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -83,5 +83,5 @@
     "graphql_field_name": "button",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1724596835
+    "modified": 1790968711
 }

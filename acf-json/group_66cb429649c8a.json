@@ -32,7 +32,7 @@
             "label": "Title",
             "name": "title",
             "type": "text",
-            "instructions": "",
+            "instructions": "H2 heading of this contact block.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -52,7 +52,7 @@
             "label": "Text",
             "name": "text",
             "type": "wysiwyg",
-            "instructions": "",
+            "instructions": "Body text of this contact block.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -134,5 +134,5 @@
     "graphql_field_name": "contentBlock",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1725568523
+    "modified": 1790968711
 }

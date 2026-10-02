@@ -7,7 +7,7 @@
             "label": "Headline",
             "name": "headline",
             "type": "text",
-            "instructions": "",
+            "instructions": "H2 heading of the music player block.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -72,7 +72,7 @@
                     "label": "Artist",
                     "name": "artist",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Artist name shown under the track name.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -92,7 +92,7 @@
                     "label": "Track name",
                     "name": "track_name",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Track name shown in the player list.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -148,5 +148,5 @@
     "graphql_field_name": "contentBlock",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1727377461
+    "modified": 1790968711
 }

@@ -7,7 +7,7 @@
             "label": "Url",
             "name": "url",
             "type": "url",
-            "instructions": "",
+            "instructions": "YouTube \/ video link.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -42,5 +42,5 @@
     "graphql_field_name": "button",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1724596852
+    "modified": 1790968711
 }

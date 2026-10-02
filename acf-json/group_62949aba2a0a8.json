@@ -88,7 +88,7 @@
                     "label": "Subtitle",
                     "name": "subtitle",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Line of text shown next to the H1 in the hero banner (e.g. \"The Original singer of Boney M\").",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -108,7 +108,7 @@
                     "label": "Mark Text",
                     "name": "mark_text",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Small caption shown above the H1 in the hero banner (e.g. \"Official Website\").",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -242,5 +242,5 @@
     "graphql_field_name": "bnmusicOptions",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1790965326
+    "modified": 1790968711
 }

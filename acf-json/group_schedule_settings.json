@@ -7,7 +7,7 @@
             "label": "Tour dates",
             "name": "schedule_items",
             "type": "repeater",
-            "instructions": "Concert / tour dates shown in the Schedule section. Past dates are hidden automatically and upcoming dates are sorted chronologically.",
+            "instructions": "Concert \/ tour dates shown in the Schedule section. Past dates are hidden automatically and upcoming dates are sorted chronologically.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -52,7 +52,7 @@
                     "label": "Text",
                     "name": "text",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Event name \/ city shown as the H3 of this date in the Tour Dates block (EN).",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -72,7 +72,7 @@
                     "label": "Text (RU)",
                     "name": "text_ru",
                     "type": "text",
-                    "instructions": "Optional. Shown on the /ru/ version instead of Text.",
+                    "instructions": "Optional. Shown on the \/ru\/ version instead of Text.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -101,8 +101,8 @@
                         "id": ""
                     },
                     "show_in_graphql": 1,
-                    "display_format": "d/m/Y",
-                    "return_format": "d/m/Y",
+                    "display_format": "d\/m\/Y",
+                    "return_format": "d\/m\/Y",
                     "first_day": 1
                 },
                 {
@@ -110,7 +110,7 @@
                     "label": "Link",
                     "name": "link",
                     "type": "text",
-                    "instructions": "Ticket / event URL (optional).",
+                    "instructions": "Ticket \/ event URL (optional).",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -150,5 +150,5 @@
     "graphql_field_name": "scheduleSettings",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1749081600
+    "modified": 1790968711
 }

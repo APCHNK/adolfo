@@ -7,7 +7,7 @@
             "label": "Text Area",
             "name": "text_area",
             "type": "wysiwyg",
-            "instructions": "",
+            "instructions": "Body text of the section.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -45,5 +45,5 @@
     "graphql_field_name": "button",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1724596845
+    "modified": 1790968711
 }
