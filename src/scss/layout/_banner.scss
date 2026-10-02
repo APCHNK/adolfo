@@ -217,3 +217,27 @@
   line-height: 1.15;
   margin-bottom: 0.08em;
 }
+
+// Same heading layout as the Boney site: subtitle above the H1 (mark text
+// stays on top), and the small title line is kept in the H1 for search
+// engines but visually hidden (screen-reader-only, not display:none).
+.banner .banner-wrap .heading div .banner-mark {
+  order: -2;
+}
+
+.banner .banner-wrap .heading div p {
+  order: -1;
+}
+
+.banner .banner-wrap .heading h1 span.banner-title__small {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
