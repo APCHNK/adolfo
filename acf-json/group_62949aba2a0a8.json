@@ -44,11 +44,31 @@
                     "mime_types": ""
                 },
                 {
+                    "key": "field_banner_title_small",
+                    "label": "Title — small letters",
+                    "name": "title_small",
+                    "type": "text",
+                    "instructions": "Optional small line shown above the big title, part of the same H1 (e.g. \"Boney M feat\"). Leave empty for a single-line title.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 1,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_66cb3442cb7f6",
-                    "label": "Title",
+                    "label": "Title — big letters",
                     "name": "title",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Main, large line of the H1 (e.g. \"Liz Mitchell\").",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -222,5 +242,5 @@
     "graphql_field_name": "bnmusicOptions",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1724696333
+    "modified": 1790965326
 }

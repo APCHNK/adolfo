@@ -2714,3 +2714,19 @@ html:not(.js) .reveal {
   height: 100vh;
   height: 100svh;
 }
+
+
+.banner .banner-wrap .heading h1 span.banner-title__small,
+.banner .banner-wrap .heading h1 span.banner-title__big {
+  color: inherit;
+  display: block;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-transform: none;
+}
+.banner .banner-wrap .heading h1 span.banner-title__small {
+  font-size: 0.42em;
+  line-height: 1.15;
+  margin-bottom: 0.08em;
+}

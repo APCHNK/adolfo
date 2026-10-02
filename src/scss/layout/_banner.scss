@@ -199,3 +199,21 @@
   height: 100vh;
   height: 100svh;
 }
+
+// Two-size H1: optional small line above the big title (both inside the h1).
+// Selectors outrank the theme's `.heading div span` label style.
+.banner .banner-wrap .heading h1 span.banner-title__small,
+.banner .banner-wrap .heading h1 span.banner-title__big {
+  color: inherit;
+  display: block;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-transform: none;
+}
+
+.banner .banner-wrap .heading h1 span.banner-title__small {
+  font-size: 0.42em;
+  line-height: 1.15;
+  margin-bottom: 0.08em;
+}
