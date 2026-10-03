@@ -2749,3 +2749,8 @@ html:not(.js) .reveal {
   white-space: nowrap;
   width: 1px;
 }
+
+.faq .faq__answer a {
+  color: #ffbe40;
+  text-decoration: underline;
+}

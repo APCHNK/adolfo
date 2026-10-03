@@ -116,3 +116,9 @@
     }
   }
 }
+
+// Links inside FAQ answers: readable on the dark background.
+.faq .faq__answer a {
+  color: $color-primary;
+  text-decoration: underline;
+}
