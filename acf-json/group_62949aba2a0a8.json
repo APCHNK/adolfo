@@ -48,7 +48,7 @@
                     "label": "Title — small letters",
                     "name": "title_small",
                     "type": "text",
-                    "instructions": "Optional small line shown above the big title, part of the same H1 (e.g. \"Boney M feat\"). Leave empty for a single-line title.",
+                    "instructions": "Part of the H1 but HIDDEN on the page (read by Google before the big title). E.g. small \"Boney M feat\" + big \"Liz Mitchell\" → H1 \"Boney M feat Liz Mitchell\". Optional.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -68,7 +68,7 @@
                     "label": "Title — big letters",
                     "name": "title",
                     "type": "text",
-                    "instructions": "Main, large line of the H1 (e.g. \"Liz Mitchell\").",
+                    "instructions": "Visible H1 in large letters (e.g. \"Liz Mitchell\"). Together with the small line it forms the full H1.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -88,7 +88,7 @@
                     "label": "Subtitle",
                     "name": "subtitle",
                     "type": "text",
-                    "instructions": "Line of text shown next to the H1 in the hero banner (e.g. \"The Original singer of Boney M\").",
+                    "instructions": "Line shown just ABOVE the H1. Not part of the H1.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -108,7 +108,7 @@
                     "label": "Mark Text",
                     "name": "mark_text",
                     "type": "text",
-                    "instructions": "Small caption shown above the H1 in the hero banner (e.g. \"Official Website\").",
+                    "instructions": "Small caption at the very top of the banner text. Not part of the H1.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -242,5 +242,5 @@
     "graphql_field_name": "bnmusicOptions",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1790968711
+    "modified": 1791028628
 }
