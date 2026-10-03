@@ -7,8 +7,20 @@
   // ACF structure: flex-content (flexible_content)
   //   → layout: content_block (clone display:seamless → style + content)
   //     → content (nested flexible_content) → actual layout components
+  // When the page ends with an FAQ block, the Instagram block goes right before
+  // it, so the FAQ sits directly above the Contact section.
+  $blocks = get_field('flex-content') ?: [];
+  $last_block = $blocks ? end($blocks) : null;
+  $faq_last = $last_block && !empty($last_block['content']) && count($last_block['content']) === 1
+    && ($last_block['content'][0]['acf_fc_layout'] ?? '') === 'faq';
+  $instagram_done = false;
+
   if (have_rows('flex-content')) :
     while (have_rows('flex-content')) : the_row();
+      if ($faq_last && !$instagram_done && get_row_index() === count($blocks)) {
+        get_template_part('template-parts/instagram');
+        $instagram_done = true;
+      }
       $style = get_sub_field('style') ?: 'light';
       ?>
       <div class="<?php echo esc_attr($style); ?>-bg">
@@ -54,7 +66,7 @@
   endif;
   ?>
 
-  <?php get_template_part('template-parts/instagram'); ?>
+  <?php if (!$instagram_done) get_template_part('template-parts/instagram'); ?>
 </main>
 
 <?php get_footer(); ?>
