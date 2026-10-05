@@ -22,10 +22,10 @@
         $instagram_done = true;
       }
       $style = get_sub_field('style') ?: 'light';
-      ?>
-      <div class="<?php echo esc_attr($style); ?>-bg">
-        <div class="columnar">
-          <?php
+      // render the block first: components return nothing when they have no
+      // data (e.g. a schedule without upcoming dates), and an empty coloured
+      // band must not be left on the page
+      ob_start();
           if (have_rows('content')) :
             while (have_rows('content')) : the_row();
               $layout = get_row_layout();
@@ -58,8 +58,11 @@
               }
             endwhile;
           endif;
-          ?>
-        </div>
+      $inner = trim(ob_get_clean());
+      if ($inner === '') continue;
+      ?>
+      <div class="<?php echo esc_attr($style); ?>-bg">
+        <div class="columnar"><?php echo $inner; ?></div>
       </div>
       <?php
     endwhile;
