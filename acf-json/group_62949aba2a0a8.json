@@ -48,7 +48,7 @@
                     "label": "Title — small letters",
                     "name": "title_small",
                     "type": "text",
-                    "instructions": "Part of the H1 but HIDDEN on the page (read by Google before the big title). E.g. small \"Boney M feat\" + big \"Liz Mitchell\" → H1 \"Boney M feat Liz Mitchell\". Optional.",
+                    "instructions": "Part of the H1 but HIDDEN on the page, read by Google AFTER the big title. E.g. big \"Ottawan\" + small \"Official Website\" → H1 \"Ottawan Official Website\". Optional.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -242,5 +242,5 @@
     "graphql_field_name": "bnmusicOptions",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1791028628
+    "modified": 1791205041
 }
