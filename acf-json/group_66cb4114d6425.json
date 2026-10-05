@@ -25,11 +25,11 @@
             "prefix_name": 0
         },
         {
-            "key": "field_headline_slides",
-            "label": "Slides",
-            "name": "slides",
-            "type": "repeater",
-            "instructions": "If filled, replaces Text Area with a text slider",
+            "key": "field_66cb41417a023",
+            "label": "Text Area",
+            "name": "text_area",
+            "type": "clone",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -37,21 +37,14 @@
                 "class": "",
                 "id": ""
             },
+            "show_in_graphql": 1,
+            "clone": [
+                "group_66cb3dfa9c1b3"
+            ],
+            "display": "seamless",
             "layout": "block",
-            "button_label": "Add Slide",
-            "sub_fields": [
-                {
-                    "key": "field_headline_slide_content",
-                    "label": "Content",
-                    "name": "content",
-                    "type": "wysiwyg",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0,
-                    "instructions": "Text of this slide."
-                }
-            ]
+            "prefix_label": 0,
+            "prefix_name": 0
         }
     ],
     "location": [
@@ -76,5 +69,5 @@
     "graphql_field_name": "contentBlock",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1790968711
+    "modified": 1791211240
 }
