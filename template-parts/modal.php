@@ -62,12 +62,25 @@ if ($form_id) {
 
       <div class="success-message" style="display:none;">
         <img src="<?php echo esc_url($success_img); ?>" alt="success" width="220" height="220" loading="lazy" decoding="async">
-        <p>Request Sent Successfully!</p>
-        <p>Thank you for your interest in Boney M.</p>
-        <p>We will be delighted to perform for you.</p>
-        <p>You got email, check your inbox !!! spam folder too !!!</p>
-        <p>Looking forward to hearing from you soon</p>
-        <p>Maya <a href="tel:+447869422699">+447869422699</a></p>
+        <?php
+        $is_ru_modal = function_exists('pll_current_language') && pll_current_language() === 'ru';
+        $modal_email = adolfo_booking_email();
+        ?>
+        <?php if ($is_ru_modal) : ?>
+          <p>Заявка успешно отправлена!</p>
+          <p>Спасибо за интерес к трибьют-шоу Адриано Челентано с Адольфо Себастиани.</p>
+          <p>Наш букинг-менеджер свяжется с вами в ближайшее время.</p>
+          <?php if ($modal_email) : ?>
+            <p>Email: <a href="mailto:<?php echo esc_attr($modal_email); ?>"><?php echo esc_html($modal_email); ?></a></p>
+          <?php endif; ?>
+        <?php else : ?>
+          <p>Request sent successfully!</p>
+          <p>Thank you for your interest in the Adriano Celentano Tribute Show by Adolfo Sebastiani.</p>
+          <p>Our booking manager will get back to you shortly.</p>
+          <?php if ($modal_email) : ?>
+            <p>Email: <a href="mailto:<?php echo esc_attr($modal_email); ?>"><?php echo esc_html($modal_email); ?></a></p>
+          <?php endif; ?>
+        <?php endif; ?>
         <div class="btn">
           <button class="button button--primary">Close</button>
         </div>
