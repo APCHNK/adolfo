@@ -204,3 +204,16 @@ add_filter( 'wpseo_schema_graph', function ( $graph, $context ) {
 
 	return $graph;
 }, 20, 2 );
+
+/**
+ * A Tour Dates page without upcoming dates is a thin placeholder: keep it
+ * reachable (follow) but out of the index until dates are added.
+ */
+add_filter( 'wpseo_robots', function ( $robots ) {
+	if ( is_page_template( 'template-tour.php' ) && ! adolfo_upcoming_schedule() ) return 'noindex, follow';
+	return $robots;
+} );
+add_filter( 'wpseo_sitemap_entry', function ( $url, $type, $post ) {
+	if ( 'post' === $type && is_object( $post ) && 'template-tour.php' === get_page_template_slug( $post ) && ! adolfo_upcoming_schedule() ) return false;
+	return $url;
+}, 10, 3 );
