@@ -48,7 +48,7 @@
                     "label": "Title — small letters",
                     "name": "title_small",
                     "type": "text",
-                    "instructions": "Part of the H1 but HIDDEN on the page, read by Google AFTER the big title. E.g. big \"Ottawan\" + small \"Official Website\" → H1 \"Ottawan Official Website\". Optional.",
+                    "instructions": "Part of the H1 but HIDDEN on the page, read by Google AFTER the big title. E.g. big \"Adolfo Sebastiani\" + small \"Celentano Tribute Show\" → H1 \"Adolfo Sebastiani Celentano Tribute Show\". Optional.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -68,7 +68,7 @@
                     "label": "Title — big letters",
                     "name": "title",
                     "type": "text",
-                    "instructions": "Visible H1 in large letters (e.g. \"Liz Mitchell\"). Together with the small line it forms the full H1.",
+                    "instructions": "Visible H1 in large letters (e.g. \"Adolfo Sebastiani\"). Together with the small line it forms the full H1.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {

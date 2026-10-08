@@ -23,7 +23,9 @@ if (!$title && !$text) return;
           <?php echo esc_html($link['title']); ?>
         </button>
       <?php endif; ?>
-      <button class="button button--outline" onclick="window.location.href='mailto:book.boneym@gmail.com'">Email</button>
+      <?php if ($booking_email = adolfo_booking_email()) : ?>
+        <a class="button button--outline" href="mailto:<?php echo esc_attr($booking_email); ?>">Email</a>
+      <?php endif; ?>
     </div>
   </div>
 </div>

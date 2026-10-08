@@ -21,8 +21,11 @@
           <?php
           $logo = get_field('header_logo', 'option') ?: get_field('logo', 'option');
           if ($logo) : ?>
-            <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
-              <?php echo adolfo_render_image($logo, array(
+            <a href="<?php echo esc_url(function_exists('pll_home_url') ? pll_home_url() : home_url('/')); ?>" class="logo">
+              <?php
+              // the logo is the site's brand mark: never leave its alt empty
+              if (is_array($logo) && empty($logo['alt'])) $logo['alt'] = adolfo_brand_name();
+              echo adolfo_render_image($logo, array(
                 'loading'       => 'eager',
                 'fetchpriority' => 'high',
                 'decoding'      => 'sync',
@@ -30,8 +33,8 @@
               )); ?>
             </a>
           <?php else : ?>
-            <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/logo.svg" alt="<?php bloginfo('name'); ?>" width="175" height="48">
+            <a href="<?php echo esc_url(function_exists('pll_home_url') ? pll_home_url() : home_url('/')); ?>" class="logo">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/logo.svg" alt="<?php echo esc_attr(adolfo_brand_name()); ?>" width="175" height="48">
             </a>
           <?php endif; ?>
 

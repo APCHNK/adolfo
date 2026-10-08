@@ -3,12 +3,14 @@
     <footer class="light-bg">
       <div class="columnar">
         <?php
-        $copyright = get_field('footer_copyright', 'option') ?: 'Boney M Liz Mitchell. All Right Reserved';
-        $email = get_field('footer_email', 'option') ?: 'book.boneym@gmail.com';
+        $copyright = get_field('footer_copyright', 'option') ?: adolfo_brand_name();
+        $email = adolfo_booking_email();
         ?>
         <div class="footer-wrap">
           <span><?php echo date('Y'); ?> &copy; <?php echo esc_html($copyright); ?></span>
-          <a href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?></a>
+          <?php if ($email) : ?>
+            <a href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?></a>
+          <?php endif; ?>
         </div>
       </div>
     </footer>

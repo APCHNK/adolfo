@@ -12,7 +12,7 @@ if ($form_id) {
 <div class="modal-wrap">
   <div class="mask"></div>
   <div class="container">
-    <h2 class="modal-title">Request</h2>
+    <h2 class="modal-title" data-success-title="<?php echo esc_attr(adolfo_brand_name()); ?>">Request</h2>
     <img class="close" src="<?php echo esc_url($close_icon); ?>" alt="close">
     <div class="content">
       <div class="form-content">

@@ -7,7 +7,7 @@
             "label": "Copyright Text",
             "name": "footer_copyright",
             "type": "text",
-            "default_value": "Boney M Liz Mitchell. All Right Reserved",
+            "default_value": "",
             "instructions": "Copyright line at the very bottom of every page (EN)."
         },
         {
@@ -15,7 +15,7 @@
             "label": "Copyright Text (RU)",
             "name": "footer_copyright_ru",
             "type": "text",
-            "default_value": "Boney M Liz Mitchell. All Right Reserved",
+            "default_value": "",
             "instructions": "Optional. Shown on the RU version instead of Copyright Text."
         },
         {
@@ -23,7 +23,7 @@
             "label": "Email",
             "name": "footer_email",
             "type": "email",
-            "default_value": "book.boneym@gmail.com",
+            "default_value": "",
             "instructions": "Email address shown in the footer."
         }
     ],

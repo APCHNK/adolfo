@@ -108,7 +108,7 @@ export function initModal() {
           if (data.status === 'mail_sent') {
             if (formContent) formContent.style.display = 'none';
             if (successMessage) successMessage.style.display = 'flex';
-            if (modalTitle) modalTitle.textContent = 'Boney M. feat Liz Mitchell';
+            if (modalTitle && modalTitle.dataset.successTitle) modalTitle.textContent = modalTitle.dataset.successTitle;
             form.reset();
           } else {
             const errEl = form.querySelector('.form-error');

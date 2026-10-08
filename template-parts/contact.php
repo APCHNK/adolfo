@@ -7,7 +7,7 @@ $title = $contact['title'] ?? '';
 $text = $contact['text'] ?? '';
 $book_button = $contact['book_button'] ?? null;
 $use_modal = $contact['use_modal'] ?? true;
-$email = $contact['email'] ?? 'book.boneym@gmail.com';
+$email = adolfo_booking_email();
 
 if (!$title && !$text) return;
 ?>

@@ -64,3 +64,35 @@ add_action( 'template_redirect', function () {
 	wp_safe_redirect( $target, 301 );
 	exit;
 } );
+
+/**
+ * Polylang prints x-default only when browser language detection is on.
+ * Point x-default at the default-language (English) version of every page
+ * that has translations, so the en/ru pair carries en + ru + x-default.
+ */
+add_filter( 'pll_rel_hreflang_attributes', function ( $hreflangs ) {
+	if ( isset( $hreflangs['x-default'] ) || ! function_exists( 'pll_default_language' ) ) {
+		return $hreflangs;
+	}
+	$default = pll_default_language( 'slug' );
+	foreach ( $hreflangs as $code => $url ) {
+		if ( $code === $default || strpos( $code, $default . '-' ) === 0 ) {
+			$hreflangs['x-default'] = $url;
+			break;
+		}
+	}
+	return $hreflangs;
+} );
+
+/**
+ * The static front page answers /page/N/ with a copy of itself (canonical /),
+ * which only produces duplicate URLs: send those back to the front page.
+ */
+add_action( 'template_redirect', function () {
+	if ( ! is_front_page() || is_preview() ) return;
+	$paged = max( (int) get_query_var( 'paged' ), (int) get_query_var( 'page' ) );
+	if ( $paged < 2 ) return;
+	$home = function_exists( 'pll_home_url' ) ? pll_home_url() : home_url( '/' );
+	wp_safe_redirect( $home, 301 );
+	exit;
+}, 5 );

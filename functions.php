@@ -1,6 +1,6 @@
 <?php
 /**
- * Boney M feat Liz Mitchell — Theme functions
+ * Adolfo Sebastiani — Adriano Celentano Tribute Show theme functions
  */
 
 if (!defined('ABSPATH')) exit;
@@ -317,3 +317,18 @@ add_filter('acf/format_value/name=footer_copyright', function ($value, $post_id,
 require_once get_template_directory() . '/inc/fix-translation-slugs.php';
 require_once get_template_directory() . '/inc/seo-front-translation.php';
 require_once get_template_directory() . '/inc/tour-dates-menu.php';
+require_once get_template_directory() . '/inc/schema-graph.php';
+
+/** Artist / brand name used for logo alt text, schema and fallbacks. */
+function adolfo_brand_name() {
+    return 'Adolfo Sebastiani';
+}
+
+/** Booking email from Theme Options (Contact, then Footer); empty when not set. */
+function adolfo_booking_email() {
+    if (!function_exists('get_field')) return '';
+    $contact = get_field('contact', 'option');
+    $email = is_array($contact) ? ($contact['email'] ?? '') : '';
+    if (!$email) $email = (string) get_field('footer_email', 'option');
+    return is_email($email) ? $email : '';
+}

@@ -7,6 +7,7 @@
  * plain <a href="/#tour-dates"> item (RU: "Афиша") is added to the header
  * menu right before its last top-level item, so crawlers and visitors reach
  * the dates through a normal link. Without dates the item disappears.
+ * When a page with the "Tour Dates" template exists, the item links there.
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -42,10 +43,31 @@ function satellite_front_has_schedule() {
 	) );
 }
 
+/** Published page using the Tour Dates template, in the current language; 0 if none. */
+function satellite_tour_page_id() {
+	static $id = null;
+	if ( null !== $id ) return $id;
+	$pages = get_posts( [
+		'post_type'   => 'page',
+		'post_status' => 'publish',
+		'meta_key'    => '_wp_page_template',
+		'meta_value'  => 'template-tour.php',
+		'numberposts' => 1,
+		'fields'      => 'ids',
+		'lang'        => function_exists( 'pll_default_language' ) ? pll_default_language() : '',
+	] );
+	$id = $pages ? (int) $pages[0] : 0;
+	if ( $id && function_exists( 'pll_get_post' ) ) {
+		$tr = pll_get_post( $id );
+		$id = $tr ? (int) $tr : 0;
+	}
+	return $id;
+}
+
 add_filter( 'wp_nav_menu_objects', function ( $items, $args ) {
 	static $show = null;
 	if ( null === $show ) {
-		$show = satellite_has_upcoming_dates() && satellite_front_has_schedule();
+		$show = satellite_has_upcoming_dates() && ( satellite_tour_page_id() || satellite_front_has_schedule() );
 	}
 	if ( ! $show || empty( $items ) ) return $items;
 
@@ -63,13 +85,15 @@ add_filter( 'wp_nav_menu_objects', function ( $items, $args ) {
 	$link->type             = 'custom';
 	$link->title            = $is_ru ? 'Афиша' : 'Tour Dates';
 	$home                   = function_exists( 'pll_home_url' ) ? pll_home_url() : home_url( '/' );
-	$link->url              = trailingslashit( $home ) . '#tour-dates';
+	// the Tour Dates page when it exists, otherwise the front page block
+	$link->url              = satellite_tour_page_id() ? get_permalink( satellite_tour_page_id() ) : trailingslashit( $home ) . '#tour-dates';
+	$link->object_id        = satellite_tour_page_id() ?: -1001;
 	$link->target           = '';
 	$link->attr_title       = '';
 	$link->description      = '';
 	$link->xfn              = '';
 	$link->classes          = [ 'menu-item', 'menu-item-tour-dates' ];
-	$link->current          = false;
+	$link->current          = satellite_tour_page_id() && is_page( satellite_tour_page_id() );
 	$link->menu_order       = 0;
 
 	// Insert before the last top-level item (Contact / Booking & Contact).
