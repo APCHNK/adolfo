@@ -153,3 +153,9 @@
     }
   }
 }
+
+// The page text colour is light (dark site); the modal card is white.
+.modal-wrap .container .modal-title,
+.modal-wrap .container .success-message p {
+  color: #14101f;
+}

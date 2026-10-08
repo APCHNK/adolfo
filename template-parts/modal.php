@@ -1,6 +1,8 @@
 <?php
 $form_id = get_field('form_id', 'option');
-$success_img = get_template_directory_uri() . '/assets/images/success.jpg';
+// success picture: the artist photo from Theme Options → Contact (no donor stock image)
+$contact_opts = get_field('contact', 'option');
+$success_img = !empty($contact_opts['image']['ID']) ? wp_get_attachment_image_url($contact_opts['image']['ID'], 'medium_large') : '';
 $close_icon = get_template_directory_uri() . '/assets/icons/close.svg';
 
 // Try to get CF7 form fields
@@ -61,7 +63,9 @@ if ($form_id) {
       </div>
 
       <div class="success-message" style="display:none;">
-        <img src="<?php echo esc_url($success_img); ?>" alt="success" width="220" height="220" loading="lazy" decoding="async">
+        <?php if ($success_img) : ?>
+          <img src="<?php echo esc_url($success_img); ?>" alt="<?php echo esc_attr(adolfo_brand_name()); ?>" loading="lazy" decoding="async">
+        <?php endif; ?>
         <?php
         $is_ru_modal = function_exists('pll_current_language') && pll_current_language() === 'ru';
         $modal_email = adolfo_booking_email();

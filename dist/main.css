@@ -2754,3 +2754,4 @@ html:not(.js) .reveal {
   color: #ffbe40;
   text-decoration: underline;
 }
+.modal-wrap .container .modal-title,.modal-wrap .container .success-message p{color:#14101f}
