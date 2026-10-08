@@ -317,6 +317,7 @@ add_filter('acf/format_value/name=footer_copyright', function ($value, $post_id,
 require_once get_template_directory() . '/inc/fix-translation-slugs.php';
 require_once get_template_directory() . '/inc/seo-front-translation.php';
 require_once get_template_directory() . '/inc/tour-dates-menu.php';
+require_once get_template_directory() . '/inc/schedule-cleanup.php';
 require_once get_template_directory() . '/inc/schema-graph.php';
 
 /** Artist / brand name used for logo alt text, schema and fallbacks. */
