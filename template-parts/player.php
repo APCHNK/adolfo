@@ -18,7 +18,6 @@ function extract_spotify_src($embed) {
 $tracks_json = array_map(function ($track) {
   return array(
     'track_name'  => $track['track_name'] ?? '',
-    'artist'      => $track['artist'] ?? '',
     'spotify_url' => extract_spotify_src($track['spotify_embed'] ?? ''),
   );
 }, $tracks);
@@ -58,7 +57,6 @@ $first_url = $tracks_json[0]['spotify_url'] ?? '';
             <img src="<?php echo esc_url($pause_icon); ?>" alt="pause" class="song-play-icon pause-icon" width="32" height="32">
             <div>
               <span class="song-name"><?php echo esc_html($song['track_name']); ?></span>
-              <span class="artist"><?php echo esc_html($song['artist']); ?></span>
             </div>
           </div>
         </div>

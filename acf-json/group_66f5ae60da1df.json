@@ -43,51 +43,6 @@
             "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_66f5afac2e113",
-                    "label": "Cover",
-                    "name": "cover",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "show_in_graphql": 1,
-                    "return_format": "array",
-                    "preview_size": "thumbnail",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_66f5afda2e114",
-                    "label": "Artist",
-                    "name": "artist",
-                    "type": "text",
-                    "instructions": "Artist name shown under the track name.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "show_in_graphql": 1,
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
                     "key": "field_66f5aff72e115",
                     "label": "Track name",
                     "name": "track_name",
@@ -148,5 +103,5 @@
     "graphql_field_name": "contentBlock",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1790968711
+    "modified": 1791468083
 }
