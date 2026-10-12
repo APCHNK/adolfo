@@ -179,8 +179,10 @@ add_filter( 'wpseo_schema_graph', function ( $graph, $context ) {
 		foreach ( adolfo_upcoming_schedule() as [ $ts, $item ] ) {
 			$place_name = ( $is_ru && ! empty( $item['text_ru'] ) ) ? $item['text_ru'] : ( $item['text'] ?? '' );
 			if ( ! $place_name ) continue;
+			$code = adolfo_country_code( $item['text'] ?? '' );
+			if ( ! $code ) continue; // a MusicEvent needs at least a country it takes place in
 			$place = [ '@type' => 'Place', 'name' => $place_name ];
-			if ( $code = adolfo_country_code( $item['text'] ?? '' ) ) {
+			if ( $code ) {
 				$place['address'] = [ '@type' => 'PostalAddress', 'addressCountry' => $code ];
 			}
 			$event = [
@@ -217,3 +219,9 @@ add_filter( 'wpseo_sitemap_entry', function ( $url, $type, $post ) {
 	if ( 'post' === $type && is_object( $post ) && 'template-tour.php' === get_page_template_slug( $post ) && ! adolfo_upcoming_schedule() ) return false;
 	return $url;
 }, 10, 3 );
+
+/** No hreflang on noindex pages (search results, Tour Dates without dates). */
+add_filter( 'pll_rel_hreflang_attributes', function ( $hreflangs ) {
+	if ( is_search() || ( is_page_template( 'template-tour.php' ) && ! adolfo_upcoming_schedule() ) ) return [];
+	return $hreflangs;
+}, 20 );
