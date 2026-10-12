@@ -64,9 +64,22 @@ function adolfo_country_code( $text ) {
 		'armenia' => 'AM', 'azerbaijan' => 'AZ', 'uzbekistan' => 'UZ', 'kyrgyzstan' => 'KG', 'belarus' => 'BY',
 		'russia' => 'RU', 'mongolia' => 'MN', 'china' => 'CN', 'japan' => 'JP', 'australia' => 'AU',
 	];
-	$parts = array_map( 'trim', explode( ',', strtolower( (string) $text ) ) );
-	$last  = end( $parts );
-	return $map[ $last ] ?? '';
+	foreach ( array_map( 'trim', explode( ',', strtolower( (string) $text ) ) ) as $part ) {
+		if ( isset( $map[ $part ] ) ) return $map[ $part ];
+	}
+	return '';
+}
+
+/**
+ * Schedule text "Country, City, Venue" (any order; country recognised by
+ * name) -> [ locality, venue ]. A bare "Austria" gives [ '', '' ].
+ */
+function adolfo_place_parts( $text ) {
+	$rest = [];
+	foreach ( array_map( 'trim', explode( ',', (string) $text ) ) as $part ) {
+		if ( $part !== '' && ! adolfo_country_code( $part ) ) $rest[] = $part;
+	}
+	return [ $rest[0] ?? '', $rest[1] ?? '' ];
 }
 
 /** Upcoming schedule items (options page), sorted, as [ ts, item ] pairs. */
@@ -181,10 +194,9 @@ add_filter( 'wpseo_schema_graph', function ( $graph, $context ) {
 			if ( ! $place_name ) continue;
 			$code = adolfo_country_code( $item['text'] ?? '' );
 			if ( ! $code ) continue; // a MusicEvent needs at least a country it takes place in
-			$place = [ '@type' => 'Place', 'name' => $place_name ];
-			if ( $code ) {
-				$place['address'] = [ '@type' => 'PostalAddress', 'addressCountry' => $code ];
-			}
+			[ $locality, $venue ] = adolfo_place_parts( $item['text'] ?? '' );
+			$place = [ '@type' => 'Place', 'name' => $venue ?: ( $locality ?: $place_name ) ];
+			$place['address'] = array_filter( [ '@type' => 'PostalAddress', 'addressLocality' => $locality, 'addressCountry' => $code ] );
 			$event = [
 				'@type'               => 'MusicEvent',
 				'@id'                 => $url . '#event-' . gmdate( 'Y-m-d', $ts ) . '-' . ( ++$n ),
