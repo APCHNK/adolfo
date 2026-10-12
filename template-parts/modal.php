@@ -11,6 +11,7 @@ if ($form_id) {
   $form_action = esc_url(home_url("/wp-json/contact-form-7/v1/contact-forms/{$form_id}/feedback"));
 }
 ?>
+<?php $modal_ru = function_exists('pll_current_language') && pll_current_language() === 'ru'; ?>
 <div class="modal-wrap">
   <div class="mask"></div>
   <div class="container">
@@ -19,28 +20,28 @@ if ($form_id) {
     <div class="content">
       <div class="form-content">
         <form action="<?php echo $form_action; ?>" method="post">
-          <p class="form-error" style="display:none;color:#cf1f14;">Something went wrong... Please, try again</p>
+          <p class="form-error" style="display:none;color:#cf1f14;"><?php echo $modal_ru ? 'Что-то пошло не так. Пожалуйста, попробуйте ещё раз.' : 'Something went wrong... Please, try again'; ?></p>
 
           <div class="field-wrap">
-            <input type="text" name="city" placeholder="City">
+            <input type="text" name="city" placeholder="<?php echo $modal_ru ? 'Город' : 'City'; ?>" aria-label="<?php echo $modal_ru ? 'Город' : 'City'; ?>">
           </div>
           <div class="field-wrap">
-            <input type="text" name="person-name" placeholder="Name">
+            <input type="text" name="person-name" placeholder="<?php echo $modal_ru ? 'Имя' : 'Name'; ?>" aria-label="<?php echo $modal_ru ? 'Имя' : 'Name'; ?>">
           </div>
           <div class="field-wrap">
-            <input type="text" name="person-private" placeholder="Private person / Event agency">
+            <input type="text" name="person-private" placeholder="<?php echo $modal_ru ? 'Частное лицо / агентство' : 'Private person / Event agency'; ?>" aria-label="<?php echo $modal_ru ? 'Частное лицо / агентство' : 'Private person / Event agency'; ?>">
           </div>
           <div class="field-wrap">
-            <input type="email" name="email" placeholder="Email">
+            <input type="email" name="email" placeholder="<?php echo $modal_ru ? 'Email' : 'Email'; ?>" aria-label="<?php echo $modal_ru ? 'Email' : 'Email'; ?>">
           </div>
           <div class="field-wrap">
-            <input type="tel" name="phone" placeholder="Phone number">
+            <input type="tel" name="phone" placeholder="<?php echo $modal_ru ? 'Телефон' : 'Phone number'; ?>" aria-label="<?php echo $modal_ru ? 'Телефон' : 'Phone number'; ?>">
           </div>
           <div class="field-wrap">
-            <input type="date" name="date" placeholder="Event date">
+            <input type="date" name="date" placeholder="<?php echo $modal_ru ? 'Дата мероприятия' : 'Event date'; ?>" aria-label="<?php echo $modal_ru ? 'Дата мероприятия' : 'Event date'; ?>">
           </div>
           <div class="submit-container">
-            <input type="submit" value="Send Request">
+            <input type="submit" value="<?php echo $modal_ru ? 'Отправить заявку' : 'Send Request'; ?>">
             <span class="spinner" style="display:none;">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="2" x2="12" y2="6"></line>
