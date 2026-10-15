@@ -1,0 +1,21 @@
+// Text links (WYSIWYG content: paragraphs, lists, FAQ answers).
+// The browser default blue is unreadable on the dark background,
+// so plain links use the brand yellow site-wide.
+p a:not([class]),
+li a:not([class]),
+.faq__answer a,
+.description a:not([class]),
+.content a:not([class]) {
+  color: $color-primary;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+
+  &:visited {
+    color: $color-primary;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: $color-primary-hover;
+  }
+}
