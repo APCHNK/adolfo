@@ -2,9 +2,9 @@
 /**
  * Template Name: Tour Dates
  *
- * Tour hub: the page title is the H1, the editor content is the intro, and
- * the upcoming dates come from Theme Options → Schedule (the same list the
- * front page shows). MusicEvent schema for these dates is added in
+ * Tour hub: the page title is the H1, then the upcoming dates from
+ * Theme Options → Schedule (the same list the front page shows), then the
+ * editor content as the intro text. MusicEvent schema for these dates is added in
  * inc/schema-graph.php.
  */
 get_header();
@@ -16,12 +16,7 @@ $booking_url = $booking ? get_permalink(function_exists('pll_get_post') ? (pll_g
 <div class="page-spacing">
   <div class="page">
     <div class="columnar simple-column">
-      <?php while (have_posts()) : the_post(); ?>
-        <h1><?php the_title(); ?></h1>
-        <?php if (trim(get_the_content())) : ?>
-          <div class="floating"><?php the_content(); ?></div>
-        <?php endif; ?>
-      <?php endwhile; ?>
+      <h1><?php echo esc_html(get_the_title()); ?></h1>
     </div>
   </div>
 </div>
@@ -47,5 +42,17 @@ $booking_url = $booking ? get_permalink(function_exists('pll_get_post') ? (pll_g
     <?php endif; ?>
   </div>
 </div>
+
+<?php
+// The intro text sits below the dates so visitors see the schedule first.
+while (have_posts()) : the_post();
+  if (trim(get_the_content())) : ?>
+<div class="page tour-intro" style="padding-top:0;padding-bottom:60px">
+  <div class="columnar simple-column">
+    <div class="floating"><?php the_content(); ?></div>
+  </div>
+</div>
+  <?php endif;
+endwhile; ?>
 
 <?php get_footer(); ?>
