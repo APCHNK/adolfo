@@ -21,7 +21,7 @@ $booking_url = $booking ? get_permalink(function_exists('pll_get_post') ? (pll_g
   </div>
 </div>
 
-<div class="light-bg">
+<div class="light-bg spacing-lg">
   <div class="columnar">
     <?php if (adolfo_upcoming_schedule()) : ?>
       <?php
@@ -47,9 +47,11 @@ $booking_url = $booking ? get_permalink(function_exists('pll_get_post') ? (pll_g
 // The intro text sits below the dates so visitors see the schedule first.
 while (have_posts()) : the_post();
   if (trim(get_the_content())) : ?>
-<div class="page tour-intro" style="padding-top:0;padding-bottom:60px">
-  <div class="columnar simple-column">
-    <div class="floating"><?php the_content(); ?></div>
+<div class="page-spacing">
+  <div class="page tour-intro" style="padding-top:0;padding-bottom:60px">
+    <div class="columnar simple-column">
+      <div class="floating"><?php the_content(); ?></div>
+    </div>
   </div>
 </div>
   <?php endif;
